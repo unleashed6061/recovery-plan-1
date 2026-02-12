@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stored Bills</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Stored Bills</h1>
+        </header>
+        
+        <div class="upload-card">
+            <h2>All Uploaded Bills</h2>
+            
+            {% if bills %}
+            <table>
+                <tr>
+                    <th>Filename</th>
+                    <th>Uploaded Time</th>
+                    <th>Replica (Flash Drive)</th>
+                    <th>Cloud</th>
+                    <th>Download</th>
+                </tr>
+                
+                {% for b in bills %}
+                <tr>
+                    <td>{{ b[0] }}</td>
+                    <td>{{ b[1] }}</td>
+                    <td class="{% if b[2] %}status-success{% else %}status-fail{% endif %}">
+                        {% if b[2] %}✅ Copied{% else %}❌ Not Copied{% endif %}
+                    </td>
+                    <td class="{% if b[3] %}status-success{% else %}status-pending{% endif %}">
+                        {% if b[3] %}✅ Uploaded{% else %}⏳ Pending{% endif %}
+                    </td>
+                    <td><a href="/download/{{ b[0] }}">📥 Download</a></td>
+                </tr>
+                {% endfor %}
+            </table>
+            {% else %}
+            <p style="text-align: center; font-size: 1.3em; color: #764ba2;">
+                No bills uploaded yet. <a href="/">Upload the first one!</a>
+            </p>
+            {% endif %}
+        </div>
+        
+        <p style="text-align: center;"><a href="/">← Upload Another Bill</a></p>
+    </div>
+    
+    <footer>© Abdul's Bill Storage Project</footer>
+</body>
+</html>

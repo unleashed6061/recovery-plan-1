@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bill Storage System</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Bill Storage System</h1>
+        </header>
+        
+        <div class="upload-card">
+            <h2>Upload a New Bill</h2>
+            <form method="post" enctype="multipart/form-data">
+                <input type="file" name="file" required>
+                <br><br>
+                <input type="submit" value="Upload Bill">
+            </form>
+        </div>
+        
+        <p style="text-align: center;"><a href="/files">View All Stored Bills →</a></p>
+    </div>
+    
+    <footer>© Abdul's Project</footer>
+</body>
+</html>
