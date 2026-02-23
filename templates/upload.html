@@ -1,27 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Bill Storage System</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Bill - Bill Storage System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <div class="container">
         <header>
             <h1>Bill Storage System</h1>
+            <div style="text-align: right; margin: 10px 0;">
+                <span>Welcome, {{ session.user | default('User') }}</span> |
+                <a href="{{ url_for('logout') }}" style="color: #e53e3e; font-weight: 500;">Logout</a>
+            </div>
         </header>
-        
+
         <div class="upload-card">
             <h2>Upload a New Bill</h2>
+
+            <!-- Show success/error messages -->
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="flash flash-{{ category }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+            <!-- Show storage paths (if you still want to display them) -->
+            {% if main_path %}
+            <p class="info-text">
+                Files will be saved to:<br>
+                • Main Server: <code>{{ main_path }}</code><br>
+                • Replica: <code>{{ replica_path }}</code><br>
+                • Cloud (rclone): <code>{{ cloud_path }}</code>
+            </p>
+            {% endif %}
+
             <form method="post" enctype="multipart/form-data">
-                <input type="file" name="file" required>
-                <br><br>
-                <input type="submit" value="Upload Bill">
+                <div class="form-group">
+                    <label for="file">Select Bill File</label>
+                    <input type="file" id="file" name="file" required accept=".pdf,.jpg,.jpeg,.png,.doc,.docx">
+                </div>
+
+                <button type="submit" class="btn-primary">Upload Bill</button>
             </form>
         </div>
-        
-        <p style="text-align: center;"><a href="/files">View All Stored Bills →</a></p>
+
+        <div class="center-links">
+            <a href="{{ url_for('list_files') }}" class="btn-secondary">View All Stored Bills →</a>
+        </div>
     </div>
-    
-    <footer>© Abdul's Project</footer>
+
+    <footer>© Abdul's Bill Storage Project</footer>
 </body>
 </html>

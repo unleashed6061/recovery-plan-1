@@ -163,3 +163,162 @@ footer {
         padding: 12px 30px;
     }
 }
+
+/* Flash messages */
+.flash-message {
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.flash-message.success { background-color: #d1fae5; color: #065f46; }
+.flash-message.danger  { background-color: #fee2e2; color: #991b1b; }
+.flash-message.warning { background-color: #fef3c7; color: #92400e; }
+.flash-message.info    { background-color: #dbeafe; color: #1e40af; }
+
+/* Form styling */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #374151;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background-color: #10b981;
+    color: white;
+    border: none;
+    padding: 14px 32px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #059669;
+    transform: translateY(-2px);
+}
+
+.auth-links {
+    text-align: center;
+    margin-top: 24px;
+    font-size: 1rem;
+}
+
+.auth-links a {
+    color: #047857;
+    font-weight: 500;
+}
+
+.auth-links a:hover {
+    text-decoration: underline;
+}
+
+/* Logout button (optional) */
+.btn-logout {
+    background-color: #ef4444;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.btn-logout:hover {
+    background-color: #dc2626;
+}
+
+/* Flash messages */
+.flash {
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.flash-success { background: #d1fae5; color: #065f46; }
+.flash-danger  { background: #fee2e2; color: #991b1b; }
+.flash-info    { background: #dbeafe; color: #1e40af; }
+
+/* Form improvements */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #374151;
+}
+
+input[type="file"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px dashed #9ca3af;
+    border-radius: 8px;
+    background: #f9fafb;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: #10b981;
+    color: white;
+    border: none;
+    padding: 0.9rem 2rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.2s;
+}
+
+.btn-primary:hover {
+    background: #059669;
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    display: inline-block;
+    background: #3b82f6;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.btn-secondary:hover {
+    background: #2563eb;
+}
+
+.center-links {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.info-text {
+    background: #ecfdf5;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    color: #065f46;
+    font-size: 0.95rem;
+}

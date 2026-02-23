@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Bill Storage System</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Bill Storage System</h1>
+        </header>
+        
+        <div class="upload-card">
+            <h2>Login to Your Account</h2>
+            
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <p class="flash-message {{ category }}">
+                            {{ message }}
+                        </p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            
+            <form method="post">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required autofocus>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                
+                <button type="submit" class="btn-primary">Log In</button>
+            </form>
+            
+            <div class="auth-links">
+                <p>Don't have an account? 
+                    <a href="{{ url_for('register') }}">Register here</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <footer>© Abdul's Bill Storage Project</footer>
+</body>
+</html>

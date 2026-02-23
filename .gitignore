@@ -1,0 +1,37 @@
+# Python / Flask
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Database & uploaded files - NEVER commit these!
+bills.db
+main_server/
+replica_storage/
+replica_backup/
+flash_backup/
+downloads/
+*.db-shm
+*.db-wal
+
+# Logs & temp files
+*.log
+*.tmp
+
+# Editor / OS files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*~
+
+# Deployment secrets (never commit!)
+config.py
+.env
